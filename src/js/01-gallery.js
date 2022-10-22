@@ -3,10 +3,10 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import imageTemplate from './gallery-template.hbs' 
 
 // Add imports above this line
-import { galleryItems } from './gallery-items';
+import { galleryItems }  from './gallery-items';
 // Change code below this line
 
-console.log(...galleryItems);
+console.log(galleryItems);
 
 const galleryDivRef = document.querySelector('.gallery');
 
