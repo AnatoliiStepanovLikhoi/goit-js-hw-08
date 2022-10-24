@@ -10,7 +10,9 @@ refs.formRef.addEventListener('input', throttle(onDataInput, 700));
 refs.formRef.addEventListener('submit', onFormSubmit);
 
 const FORM_DATA_KEY = "feedback-form-state";
+
 // let formData = JSON.parse(localStorage.getItem(FORM_DATA_KEY)) ?? {};
+
 let formData = {};
 
 
@@ -21,8 +23,8 @@ function returnFromLocalStorage() {
     if (savedData) {
         console.log(savedData);
 
-        refs.textareaRef.value = savedData.message;
-        refs.emailInputRef.value = savedData.email;
+        refs.textareaRef.value = savedData.message ?? '';
+        refs.emailInputRef.value = savedData.email ?? '';
     };
 
     // console.log(Object.values(formData));
