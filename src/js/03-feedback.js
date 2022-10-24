@@ -16,15 +16,14 @@ let formData = {};
 
 function returnFromLocalStorage() {
 
-    let savedData = JSON.parse(localStorage.getItem(FORM_DATA_KEY))
+    let savedData = JSON.parse(localStorage.getItem(FORM_DATA_KEY));
 
     if (savedData) {
         console.log(savedData);
 
         refs.textareaRef.value = savedData.message;
         refs.emailInputRef.value = savedData.email;
-     }
-
+    };
 
     // console.log(Object.values(formData));
 
@@ -53,12 +52,17 @@ function onDataInput(event) {
 
 function onFormSubmit(event) {
     event.preventDefault();
+
+    console.log(formData)
+
     onFormReset(event);
 };
 
 function onFormReset(event) {
     event.target.reset();
+
     formData = {};
+    
     localStorage.removeItem(FORM_DATA_KEY);
 };
 
